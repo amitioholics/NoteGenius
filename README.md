@@ -162,8 +162,8 @@ Add your screenshots in `/public/screenshots` and link them here:
 
 **Amit Singh Rajput**  
 Email: `amitsinghrajput263@gmail.com`  
-LinkedIn: <add-your-linkedin-url>  
-GitHub: <add-your-github-url>
+LinkedIn: <add-your-linkedin-urlhttps://www.linkedin.com/in/amit-kumar-0a6617258>  
+GitHub: <add-your-github-urlhttps://github.com/amitioholics/NoteGenius>
 
 ---
 
