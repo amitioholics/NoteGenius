@@ -47,7 +47,7 @@ export default function NoteEditor({ note, onUpdateNote }: NoteEditorProps) {
         onFocus={handleFocus}
         placeholder="Start typing your notes here... ✨
 
-💡 Tip: Use NoteGenius AI features to summarize, extract keywords, and create quizzes from your notes!"
+💡 Tip: Use Notefi AI features to summarize, extract keywords, and create quizzes from your notes!"
         className={`min-h-[400px] font-mono p-4 resize-y transition-all duration-300 custom-scrollbar ${
           isFocused
             ? "border-primary/50 shadow-lg hover-glow animate-pulse-glow"
@@ -58,7 +58,6 @@ export default function NoteEditor({ note, onUpdateNote }: NoteEditorProps) {
         <span>
           {content.length} characters • {content.split(/\s+/).filter((word) => word.length > 0).length} words
         </span>
-        <span className="text-primary/60">Made by Amit Singh Rajput</span>
       </div>
     </div>
   )

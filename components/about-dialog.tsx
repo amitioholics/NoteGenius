@@ -11,7 +11,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Heart, Sparkles, Brain, BookOpen, Lightbulb, Info } from "lucide-react"
+import { Heart, Sparkles, Brain, BookOpen, Lightbulb, Info } from "lucide-react"
 
 export default function AboutDialog() {
   const [open, setOpen] = useState(false)
@@ -19,7 +19,7 @@ export default function AboutDialog() {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className="hover-lift hover-glow">
+        <Button variant="outline" size="sm" className="hover-lift hover-glow bg-transparent">
           <Info className="h-4 w-4 mr-2" />
           About
         </Button>
@@ -28,7 +28,7 @@ export default function AboutDialog() {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2 text-2xl gradient-text">
             <Sparkles className="h-6 w-6 text-primary animate-pulse-glow" />
-            About NoteGenius
+            About Notefi
           </DialogTitle>
           <DialogDescription className="text-base">
             AI-powered note-taking application designed to enhance your learning experience
@@ -79,29 +79,6 @@ export default function AboutDialog() {
                   </Badge>
                 ),
               )}
-            </div>
-          </div>
-
-          {/* Developer Section */}
-          <div className="space-y-4 p-6 rounded-xl gradient-bg border border-primary/20">
-            <h3 className="text-lg font-semibold gradient-text">Developer</h3>
-            <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white text-xl font-bold animate-pulse-glow">
-                A
-              </div>
-              <div className="space-y-2">
-                <h4 className="text-xl font-semibold gradient-text">Amit Singh Rajput</h4>
-                <p className="text-muted-foreground">Full Stack Developer & AI Enthusiast</p>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4 w-4 text-primary" />
-                  <a
-                    href="mailto:amitsinghrajput263@gmail.com"
-                    className="text-primary hover:underline transition-all duration-300 hover-lift"
-                  >
-                    amitsinghrajput263@gmail.com
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
 
