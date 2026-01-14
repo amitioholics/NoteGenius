@@ -12,7 +12,7 @@ import NoteEditor from "@/components/note-editor"
 import NotesList from "@/components/notes-list"
 import type { Note } from "@/types/note"
 import { summarizeNote, extractKeywords, generateQuiz } from "@/lib/ai-helpers"
-import { Sparkles, Plus, Brain, BookOpen, Lightbulb } from "lucide-react"
+import { Sparkles, Plus, Brain, BookOpen, Lightbulb, Mail, Heart } from "lucide-react"
 import AboutDialog from "@/components/about-dialog"
 import KeywordCard from "@/components/keyword-card"
 import { Badge } from "@/components/ui/badge"
@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="animate-float">
                   <Sparkles className="h-10 w-10 text-primary animate-pulse-glow" />
                 </div>
-                <h1 className="text-4xl font-bold gradient-text">Notefi</h1>
+                <h1 className="text-4xl font-bold gradient-text">NoteGenius</h1>
               </div>
               <div className="flex items-center gap-3">
                 <AboutDialog />
@@ -127,7 +127,7 @@ export default function Home() {
                       <Lightbulb className="h-12 w-12 text-yellow-500" />
                     </div>
                   </div>
-                  <h2 className="text-3xl font-bold gradient-text mb-4">Welcome to Notefi!</h2>
+                  <h2 className="text-3xl font-bold gradient-text mb-4">Welcome to NoteGenius!</h2>
                   <p className="text-muted-foreground text-lg mb-6 max-w-2xl mx-auto">
                     Create intelligent study notes with AI-powered summaries, keyword extraction, and interactive
                     quizzes. Start your learning journey today!
@@ -246,8 +246,25 @@ export default function Home() {
           {/* Footer */}
           <footer className="mt-16 py-8 border-t border-primary/20 animate-fade-in-up">
             <div className="text-center space-y-4">
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <span>Made with</span>
+                <Heart className="h-4 w-4 text-red-500 animate-pulse" />
+                <span>by</span>
+                <span className="font-semibold gradient-text">Amit Singh Rajput</span>
+              </div>
+
+              <div className="flex items-center justify-center gap-4">
+                <a
+                  href="mailto:amitsinghrajput263@gmail.com"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors duration-300 hover-lift"
+                >
+                  <Mail className="h-4 w-4" />
+                  amitsinghrajput263@gmail.com
+                </a>
+              </div>
+
               <div className="text-xs text-muted-foreground">
-                © 2025 Notefi. Empowering students with AI-powered learning tools.
+                © 2024 NoteGenius. Empowering students with AI-powered learning tools.
               </div>
             </div>
           </footer>
@@ -313,7 +330,7 @@ function SummaryTab({ note }: { note: Note }) {
               size="sm"
               onClick={handleGenerateSummary}
               disabled={loading}
-              className="hover-lift bg-transparent"
+              className="hover-lift"
             >
               Try Again
             </Button>
@@ -333,7 +350,7 @@ function SummaryTab({ note }: { note: Note }) {
               size="sm"
               onClick={handleGenerateSummary}
               disabled={loading}
-              className="hover-lift hover-glow bg-transparent"
+              className="hover-lift hover-glow"
             >
               {loading ? "Regenerating..." : "Regenerate"}
             </Button>
@@ -403,7 +420,7 @@ function KeywordsTab({ note }: { note: Note }) {
               size="sm"
               onClick={handleExtractKeywords}
               disabled={loading}
-              className="hover-lift bg-transparent"
+              className="hover-lift"
             >
               Try Again
             </Button>
@@ -426,7 +443,7 @@ function KeywordsTab({ note }: { note: Note }) {
               size="sm"
               onClick={handleExtractKeywords}
               disabled={loading}
-              className="hover-lift hover-glow bg-transparent"
+              className="hover-lift hover-glow"
             >
               {loading ? "Extracting..." : "Refresh Keywords"}
             </Button>
@@ -549,13 +566,7 @@ function QuizTab({ note }: { note: Note }) {
           <h3 className="font-medium mb-2">AI Service Unavailable</h3>
           <p>{error}</p>
           <div className="mt-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleGenerateQuiz}
-              disabled={loading}
-              className="hover-lift bg-transparent"
-            >
+            <Button variant="outline" size="sm" onClick={handleGenerateQuiz} disabled={loading} className="hover-lift">
               Try Again
             </Button>
           </div>
@@ -570,7 +581,7 @@ function QuizTab({ note }: { note: Note }) {
               Quiz Questions
             </h3>
             <div className="flex gap-2">
-              <Button variant="outline" size="sm" onClick={resetQuiz} className="hover-lift hover-glow bg-transparent">
+              <Button variant="outline" size="sm" onClick={resetQuiz} className="hover-lift hover-glow">
                 Reset Answers
               </Button>
               <Button
@@ -578,7 +589,7 @@ function QuizTab({ note }: { note: Note }) {
                 size="sm"
                 onClick={handleGenerateQuiz}
                 disabled={loading}
-                className="hover-lift hover-glow bg-transparent"
+                className="hover-lift hover-glow"
               >
                 {loading ? "Generating..." : "New Quiz"}
               </Button>
@@ -747,7 +758,7 @@ function TagsInput({ tags, onUpdateTags }: { tags: string[]; onUpdateTags: (tags
           placeholder="Add tag..."
           className="w-40 hover-glow transition-all duration-300"
         />
-        <Button variant="outline" size="sm" onClick={handleAddTag} className="hover-lift hover-glow bg-transparent">
+        <Button variant="outline" size="sm" onClick={handleAddTag} className="hover-lift hover-glow">
           Add
         </Button>
       </div>
